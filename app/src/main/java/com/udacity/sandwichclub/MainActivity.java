@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //POKEMON POKEMON POKEMON
+    //CHECK CHECK CHECK
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
