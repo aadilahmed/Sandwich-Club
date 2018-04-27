@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //POKEMON POKEMON POKEMON!!!
+    //!Pokemon THING!!!!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
