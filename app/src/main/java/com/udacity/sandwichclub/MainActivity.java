@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TESTING TESTING TESTING
+    //POKEMON POKEMON POKEMON
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
