@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //CHECK CHECK CHECK
+    //!!>>!!>>!>!>!>!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
