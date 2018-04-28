@@ -10,8 +10,6 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //!Pokemon THING!!!!
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
