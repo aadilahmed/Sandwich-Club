@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,8 +75,24 @@ public class DetailActivity extends AppCompatActivity {
         TextView ingredientsTv = findViewById(R.id.ingredients_tv);
         TextView alsoKnownTv = findViewById(R.id.also_known_tv);
 
+        TextView originLabel = findViewById(R.id.origin_label);
+        TextView descriptionLabel = findViewById(R.id.description_label);
+        TextView ingredientsLabel = findViewById(R.id.ingredients_label);
+        TextView alsoKnownLabel = findViewById(R.id.also_known_label);
+
         descriptionTv.setText(sandwich.getDescription());
+
+        if(descriptionTv.length() == 0) {
+            descriptionLabel.setVisibility(View.GONE);
+            descriptionTv.setVisibility(View.GONE);
+        }
+
         originTv.setText(sandwich.getPlaceOfOrigin());
+
+        if(originTv.length() == 0) {
+            originLabel.setVisibility(View.GONE);
+            originTv.setVisibility(View.GONE);
+        }
 
         List<String> akaArray = sandwich.getAlsoKnownAs();
 
@@ -89,6 +106,11 @@ public class DetailActivity extends AppCompatActivity {
             }
         }
 
+        if(akaArray.size() == 0) {
+            alsoKnownLabel.setVisibility(View.GONE);
+            alsoKnownTv.setVisibility(View.GONE);
+        }
+
         List<String> ingredientsArray = sandwich.getIngredients();
 
         for(int i = 0; i < ingredientsArray.size(); i++) {
@@ -97,6 +119,11 @@ public class DetailActivity extends AppCompatActivity {
             if(i < ingredientsArray.size() - 1) {
                 ingredientsTv.append(", ");
             }
+        }
+
+        if(ingredientsArray.size() == 0) {
+            ingredientsLabel.setVisibility(View.GONE);
+            ingredientsTv.setVisibility(View.GONE);
         }
     }
 }
