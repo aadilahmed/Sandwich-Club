@@ -101,6 +101,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/labelSecondary"
             android:paddingLeft="@dimen/text_padding_horizontal"
-            android:paddingRight="@dimen/text_padding_horizontal"/>
+            android:paddingRight="@dimen/text_padding_horizontal"
+            android:paddingBottom="@dimen/label_padding_bottom"/>
     </LinearLayout>
 </ScrollView>

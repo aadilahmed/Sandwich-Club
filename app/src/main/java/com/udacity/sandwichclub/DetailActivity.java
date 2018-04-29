@@ -27,6 +27,11 @@ public class DetailActivity extends AppCompatActivity {
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
+        TextView originTv = findViewById(R.id.origin_tv);
+        TextView descriptionTv = findViewById(R.id.description_tv);
+        TextView ingredientsTv = findViewById(R.id.ingredients_tv);
+        TextView alsoKnownTv = findViewById(R.id.also_known_tv);
+
         Intent intent = getIntent();
         if (intent == null) {
             closeOnError();
@@ -52,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
                 return;
             }
 
-            populateUI(sandwich);
+            populateUI(sandwich, originTv, descriptionTv, ingredientsTv, alsoKnownTv);
             Picasso.with(this)
                     .load(sandwich.getImage())
                     .into(ingredientsIv);
@@ -68,17 +73,8 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI(Sandwich sandwich) {
-        TextView originTv = findViewById(R.id.origin_tv);
-        TextView descriptionTv = findViewById(R.id.description_tv);
-        TextView ingredientsTv = findViewById(R.id.ingredients_tv);
-        TextView alsoKnownTv = findViewById(R.id.also_known_tv);
-
-        TextView originLabel = findViewById(R.id.origin_label);
-        TextView descriptionLabel = findViewById(R.id.description_label);
-        TextView ingredientsLabel = findViewById(R.id.ingredients_label);
-        TextView alsoKnownLabel = findViewById(R.id.also_known_label);
-
+    private void populateUI(Sandwich sandwich, TextView originTv, TextView descriptionTv,
+                            TextView ingredientsTv, TextView alsoKnownTv) {
         descriptionTv.setText(sandwich.getDescription());
 
         if(descriptionTv.length() == 0) {
