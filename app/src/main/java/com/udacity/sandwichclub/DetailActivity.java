@@ -13,7 +13,6 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
@@ -80,11 +79,13 @@ public class DetailActivity extends AppCompatActivity {
 
         List<String> akaArray = sandwich.getAlsoKnownAs();
 
-        for(int i = 0; i < akaArray.size(); i++) {
-            alsoKnownTv.append(akaArray.get(i));
+        if(akaArray.size() > 0) {
+            for (int i = 0; i < akaArray.size(); i++) {
+                alsoKnownTv.append(akaArray.get(i));
 
-            if(i < akaArray.size() - 1) {
-                alsoKnownTv.append(", ");
+                if (i < akaArray.size() - 1) {
+                    alsoKnownTv.append(", ");
+                }
             }
         }
 
