@@ -3,7 +3,6 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,15 +82,13 @@ public class DetailActivity extends AppCompatActivity {
         descriptionTv.setText(sandwich.getDescription());
 
         if(descriptionTv.length() == 0) {
-            descriptionLabel.setVisibility(View.GONE);
-            descriptionTv.setVisibility(View.GONE);
+            descriptionTv.setText(R.string.no_data_error_message);
         }
 
         originTv.setText(sandwich.getPlaceOfOrigin());
 
         if(originTv.length() == 0) {
-            originLabel.setVisibility(View.GONE);
-            originTv.setVisibility(View.GONE);
+            originTv.setText(R.string.no_data_error_message);
         }
 
         List<String> akaArray = sandwich.getAlsoKnownAs();
@@ -107,8 +104,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         if(akaArray.size() == 0) {
-            alsoKnownLabel.setVisibility(View.GONE);
-            alsoKnownTv.setVisibility(View.GONE);
+            alsoKnownTv.setText(R.string.no_data_error_message);
         }
 
         List<String> ingredientsArray = sandwich.getIngredients();
@@ -122,8 +118,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         if(ingredientsArray.size() == 0) {
-            ingredientsLabel.setVisibility(View.GONE);
-            ingredientsTv.setVisibility(View.GONE);
+            ingredientsTv.setText(R.string.no_data_error_message);
         }
     }
 }
